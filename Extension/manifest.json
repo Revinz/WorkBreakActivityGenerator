@@ -1,0 +1,27 @@
+{
+  "name": "Work Break Activity Generator",
+  "version": "0.01",
+  "description": "",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Timer",
+    "default_icon": {}
+  },
+  "icons": {},
+  "options_page": "options.html",
+
+  "background": {
+    "scripts": [
+      "/includes/jquery-3.4.1.min.js",
+      "/Scripts/TimerBadge.js",
+      "/Scripts/Timer.js",
+      "/Scripts/Cycle.js",
+      "/Scripts/Settings.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
+
+  "permissions": ["storage", "tabs"]
+}
