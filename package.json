@@ -1,0 +1,25 @@
+{
+  "name": "workbreak_software",
+  "version": "0.1.0",
+  "description": "Work Break Activity Generator Extension",
+  "main": "index.js",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Revinz/WorkBreak_Software.git"
+  },
+  "author": "Patrick Staalbo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Revinz/WorkBreak_Software/issues"
+  },
+  "homepage": "https://github.com/Revinz/WorkBreak_Software#readme",
+  "dependencies": {
+    "jasmine-spec-reporter": "^5.0.1"
+  }
+}
