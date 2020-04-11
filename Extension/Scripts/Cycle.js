@@ -1,25 +1,25 @@
+Phases = {
+  FOCUS: "Focus",
+  BREAK: "Short Break",
+  LONG_BREAK: "Long Break",
+};
+
 class Cycle {
   constructor() {
-    this.Phases = {
-      FOCUS: "Focus",
-      BREAK: "Short Break",
-      LONG_BREAK: "Long Break",
-    };
-
     this.Restart();
   }
 
   NextPhase() {
-    if (this.currPhase == this.Phases.FOCUS) {
+    if (this.currPhase == Phases.FOCUS) {
       this.FocusPhaseCompleted();
 
       if (this.isLongBreak) {
-        this.currPhase = this.Phases.LONG_BREAK;
+        this.currPhase = Phases.LONG_BREAK;
       } else {
-        this.currPhase = this.Phases.BREAK;
+        this.currPhase = Phases.BREAK;
       }
     } else {
-      this.currPhase = this.Phases.FOCUS;
+      this.currPhase = Phases.FOCUS;
     }
   }
 
@@ -39,7 +39,7 @@ class Cycle {
     this.FocusCount = 0; //How many times a work timer has been completed
     this.longBreakInterval = 3; //How many focuses required for a long break
     this.isLongBreak = false;
-    this.currPhase = this.Phases.FOCUS;
+    this.currPhase = Phases.FOCUS;
   }
 
   toString() {

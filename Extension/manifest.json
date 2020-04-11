@@ -18,6 +18,7 @@
       "/Scripts/Timer.js",
       "/Scripts/Cycle.js",
       "/Scripts/Settings.js",
+      "/Scripts/Activity.js",
       "background.js"
     ],
     "persistent": true

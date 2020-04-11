@@ -13,7 +13,8 @@ RestoreSettings(function () {
 function Run() {
   console.log("Run");
   console.log(cycle.toString());
-
+  let a = new Activity("Test Activity");
+  a.AddAllowedBreak(Phases.BREAK);
   onBadgeClick();
 }
 
@@ -32,7 +33,7 @@ function PauseTimer() {
 function onBadgeClick() {
   if (timer == null) {
     //Create Respective Timer for current phase
-    if (cycle.currPhase == cycle.Phases.FOCUS) {
+    if (cycle.currPhase == Phases.FOCUS) {
       CreateWorkTimer();
     } else {
       CreateBreakTimer();
