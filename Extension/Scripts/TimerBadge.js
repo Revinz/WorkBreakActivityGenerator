@@ -64,4 +64,4 @@ class TimerBadge {
   }
 }
 
-module.exports = TimerBadge;
+//module.exports = TimerBadge;

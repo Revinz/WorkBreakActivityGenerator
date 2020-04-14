@@ -4,7 +4,19 @@
   "description": "Work Break Activity Generator Extension",
   "main": "index.js",
   "devDependencies": {
-    "jasmine": "^3.5.0"
+    "jasmine": "^3.5.0",
+    "karma": "^5.0.1",
+    "karma-browserify": "^7.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-firefox-launcher": "^1.3.0",
+    "karma-jasmine": "^3.1.1",
+    "karma-jasmine-html-reporter": "^1.5.3",
+    "karma-renquirejs": "^1.1.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sinon-chrome": "^0.2.0",
+    "karma-spec-reporter": "0.0.32",
+    "requirejs": "^2.3.6",
+    "sinon-chrome": "^3.0.1"
   },
   "scripts": {
     "test": "jasmine"

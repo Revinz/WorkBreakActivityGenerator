@@ -1,4 +1,4 @@
-describe("Jasmine Control Test", function () {
+describe("Karma Test Framework", function () {
   var a;
 
   it("Testing works", function () {

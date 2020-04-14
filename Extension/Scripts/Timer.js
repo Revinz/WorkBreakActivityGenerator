@@ -1,4 +1,4 @@
-var TimerBadge = require("../Scripts/TimerBadge.js");
+//var TimerBadge = require("../Scripts/TimerBadge.js");
 
 class Timer {
   /**
@@ -92,4 +92,4 @@ class Timer {
   }
 }
 
-module.exports = Timer;
+//module.exports = Timer;
