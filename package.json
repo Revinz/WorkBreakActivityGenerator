@@ -15,7 +15,6 @@
     "karma-safari-launcher": "^1.0.0",
     "karma-sinon-chrome": "^0.2.0",
     "karma-spec-reporter": "0.0.32",
-    "requirejs": "^2.3.6",
     "sinon-chrome": "^3.0.1"
   },
   "scripts": {
