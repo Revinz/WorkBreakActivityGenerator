@@ -63,3 +63,5 @@ class TimerBadge {
     return timeRemaining.toString() + "s";
   }
 }
+
+//module.exports = TimerBadge;

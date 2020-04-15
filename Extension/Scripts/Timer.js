@@ -1,3 +1,5 @@
+//var TimerBadge = require("../Scripts/TimerBadge.js");
+
 class Timer {
   /**
    * Creates a new Timer
@@ -5,6 +7,7 @@ class Timer {
    * @constructor
    * @param {string} name The desired name of the timer
    * @param {*} duration The desired duration the time should last
+   * @param {string} badgeColor The desired color as a string e.g "rgb(150, 30, 30)"
    * @param {*} callback The desired behavior to execute after the timer ends
    */
 
@@ -12,7 +15,7 @@ class Timer {
     //Fields
     this.States = {
       RUNNING: 1,
-      PAUSED: 2
+      PAUSED: 2,
     };
 
     this.state = this.States.PAUSED;
@@ -75,7 +78,7 @@ class Timer {
   }
 
   CreateIntervalTimer(timer) {
-    return setInterval(function() {
+    return setInterval(function () {
       timer.Update();
     }, 1000);
   }
@@ -88,3 +91,5 @@ class Timer {
     this.Stop();
   }
 }
+
+//module.exports = Timer;

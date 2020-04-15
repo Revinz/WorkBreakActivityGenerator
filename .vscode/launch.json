@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "WorkBreakActivityExtension",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\Extension\\tests\\TimerTests.js"
+      "program": "${workspaceFolder}\\Debug.js"
     }
   ]
 }
