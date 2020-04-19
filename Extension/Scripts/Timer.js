@@ -54,7 +54,8 @@ class Timer {
    * Stops the timer and deletes itself from the storage
    */
   Stop() {
-    clearInterval(this.timer);
+    clearInterval(this.timer); //Removes the interval from the timer
+    this.timer = null; //Allows for checking if the timer still has an interval or not
   }
 
   /**
@@ -87,6 +88,7 @@ class Timer {
     return this.state == this.States.RUNNING;
   }
 
+  //For future use
   Delete() {
     this.Stop();
   }

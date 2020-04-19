@@ -2,6 +2,7 @@ class TimerBadge {
   constructor(color) {
     this.enabled = true;
     this.color = color;
+    this.badgeText = "";
   }
 
   /**
@@ -13,23 +14,20 @@ class TimerBadge {
       return;
     }
 
-    let badgeText = this.formatTime(timeRemaining);
-
     chrome.browserAction.setBadgeBackgroundColor({ color: this.color });
 
     //Set text based on state
     if (isRunning) {
-      chrome.browserAction.setBadgeText({
-        text: badgeText,
-      });
+      this.badgeText = this.formatTime(timeRemaining);
     }
-
     //Paused
     else {
-      chrome.browserAction.setBadgeText({
-        text: "—",
-      });
+      this.badgeText = "__";
     }
+
+    chrome.browserAction.setBadgeText({
+      text: this.badgeText,
+    });
   }
 
   /**
