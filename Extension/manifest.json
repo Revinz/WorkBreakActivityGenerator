@@ -14,15 +14,17 @@
   "background": {
     "scripts": [
       "/includes/jquery-3.4.1.min.js",
+      "/Scripts/ActivityGen.js",
       "/Scripts/TimerBadge.js",
       "/Scripts/Timer.js",
       "/Scripts/Cycle.js",
       "/Scripts/Settings.js",
       "/Scripts/Activity.js",
-      "background.js"
+      "background.js",
+      "/Scripts/NotificationMaker.js"
     ],
     "persistent": true
   },
 
-  "permissions": ["storage", "tabs"]
+  "permissions": ["storage", "tabs", "notifications"]
 }

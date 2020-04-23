@@ -11,7 +11,7 @@ class Timer {
    * @param {*} callback The desired behavior to execute after the timer ends
    */
 
-  constructor(name, duration, badgeColor, callback) {
+  constructor(name, duration, badgeColor, callback, cycle) {
     //Fields
     this.States = {
       RUNNING: 1,
@@ -25,6 +25,7 @@ class Timer {
     this.name = name;
     this.badge = new TimerBadge(badgeColor);
     this.badge.color = badgeColor;
+    console.log("Timer created: " + this.name);
   }
 
   /**
@@ -63,6 +64,14 @@ class Timer {
    */
   onTimerEnd() {
     this.callback();
+  }
+
+  Toggle() {
+    if (this.isRunning()) {
+      this.Pause();
+    } else {
+      this.Start();
+    }
   }
 
   Update() {

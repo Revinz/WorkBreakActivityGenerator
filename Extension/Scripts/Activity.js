@@ -3,6 +3,7 @@ class Activity {
     this.Rename(_name);
     this.AllowedBreaks = [];
     this.LastPickedInterval = 0; //How long time it has been since this activity got chosen
+    this.url;
   }
 
   /**
@@ -13,13 +14,17 @@ class Activity {
     this.name = name;
   }
 
+  SetURL(url) {
+    this.url = url;
+  }
+
   /**
    * Adds a break phase to the allowed phases of the activity
    * @param {Phase} _break_type
    */
   AddAllowedBreak(_break_type) {
     if (_break_type == Phases.FOCUS) {
-      console.log("Now Allowed");
+      console.log("Not Allowed");
     } else {
       //Add break type to the list of allowed break types if not already in it
       if (!this.AllowedBreaks.includes(_break_type)) {

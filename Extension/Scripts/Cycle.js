@@ -12,7 +12,6 @@ class Cycle {
   NextPhase() {
     if (this.currPhase == Phases.FOCUS) {
       this.FocusPhaseCompleted();
-
       if (this.isLongBreak) {
         this.currPhase = Phases.LONG_BREAK;
       } else {
@@ -21,8 +20,32 @@ class Cycle {
     } else {
       this.currPhase = Phases.FOCUS;
     }
+
+    timer = this.CreatePhaseTimer(this.currPhase);
+    timer.Start(); //TODO: Temporary: Only used for testing
   }
 
+  CreatePhaseTimer(phase) {
+    if (phase == Phases.FOCUS) {
+      return new Timer(
+        this.currPhase,
+        10,
+        "rgb(150, 30, 30)",
+        this.NextPhase.bind(this)
+      );
+    } else {
+      let duration = 5;
+      if (this.isLongBreak) {
+        duration = 10;
+      }
+      return new Timer(
+        this.currPhase,
+        duration,
+        "rgb(30, 150, 30)",
+        this.NextPhase.bind(this)
+      );
+    }
+  }
   /**
    * Updates the focus count and
    * checks if the next phase is a long break
