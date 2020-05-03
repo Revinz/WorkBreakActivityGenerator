@@ -60,9 +60,9 @@ class Timer {
   }
 
   /**
-   * Gets called when the timer has finished
+   * Gets called when the timer has expired
    */
-  onTimerEnd() {
+  Expire() {
     this.callback();
   }
 
@@ -83,7 +83,7 @@ class Timer {
     this.badge.UpdateBadge(this.isRunning(), this.timeRemaining);
     if (this.timeRemaining <= 0) {
       this.Stop();
-      this.onTimerEnd();
+      this.Expire();
     }
   }
 

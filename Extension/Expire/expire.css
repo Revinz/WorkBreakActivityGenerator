@@ -1,0 +1,29 @@
+#app {
+  text-align: center;
+  margin-top: 10%;
+}
+
+#phase {
+  margin-bottom: 100px;
+  font-size: 5em;
+}
+
+#activity {
+  font-size: 3.4em;
+}
+
+#activity_title {
+  font-size: 1.7em;
+}
+
+#bnNextPhase {
+  padding: 15px 32px;
+  font-size: 1.1em;
+  background-color: #df1414;
+  border: none;
+  color: white;
+}
+
+#bnNextPhase:hover {
+  background-color: #a51515;
+}

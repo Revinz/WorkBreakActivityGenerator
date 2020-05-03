@@ -9,29 +9,44 @@ class Cycle {
     this.Restart();
   }
 
-  NextPhase() {
+  OnPhaseComplete() {
     if (this.currPhase == Phases.FOCUS) {
       this.FocusPhaseCompleted();
-      if (this.isLongBreak) {
-        this.currPhase = Phases.LONG_BREAK;
-      } else {
-        this.currPhase = Phases.BREAK;
-      }
-    } else {
-      this.currPhase = Phases.FOCUS;
     }
 
-    timer = this.CreatePhaseTimer(this.currPhase);
+    //this.OpenPhaseCompletedPage();
+
+    timer = this.CreatePhaseTimer(this.NextPhase);
     timer.Start(); //TODO: Temporary: Only used for testing
   }
 
+  OpenPhaseCompletedPage() {
+    ExpirePage().Show();
+  }
+
+  /**
+   * Gets the next phase of the cycle
+   */
+  get NextPhase() {
+    if (this.currPhase == Phases.FOCUS) {
+      if (this.isLongBreak) {
+        return Phases.LONG_BREAK;
+      } else {
+        return Phases.BREAK;
+      }
+    } else {
+      return Phases.FOCUS;
+    }
+  }
+
+  //TODO: Get phase settings and create timer based on the settings
   CreatePhaseTimer(phase) {
     if (phase == Phases.FOCUS) {
       return new Timer(
         this.currPhase,
         10,
         "rgb(150, 30, 30)",
-        this.NextPhase.bind(this)
+        this.OnPhaseComplete.bind(this)
       );
     } else {
       let duration = 5;
@@ -42,7 +57,7 @@ class Cycle {
         this.currPhase,
         duration,
         "rgb(30, 150, 30)",
-        this.NextPhase.bind(this)
+        this.OnPhaseComplete.bind(this)
       );
     }
   }

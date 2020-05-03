@@ -26,6 +26,8 @@ activities.push(read_courage);
 activities.push(read_tower);
 activities.push(read_shaman);
 
+GetView();
+
 chrome.storage.sync.clear();
 //Restore the user's settings before starting
 RestoreSettings(function () {
@@ -48,4 +50,20 @@ function onBadgeClick() {
   }
   //Then we can start the new timer / toggle the existing the one
   timer.Toggle();
+}
+
+async function OpenTestPages() {
+  await ExpirePage.Show();
+
+  await setTimeout(async function () {
+    console.log("trying to open 2nd tab");
+    await ExpirePage.Show();
+  }, 2000);
+}
+
+async function GetView() {
+  await OpenTestPages();
+
+  let views = chrome.extension.getViews();
+  console.log(views);
 }
