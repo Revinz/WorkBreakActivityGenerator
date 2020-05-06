@@ -1,5 +1,5 @@
-function RandomBreakActivity(Phase) {
-  var validActivities = activities.filter((a) =>
+function RandomBreakActivity(Phase, activity_list) {
+  var validActivities = activity_list.filter((a) =>
     a.AllowedBreaks.includes(Phase)
   );
 
@@ -9,5 +9,5 @@ function RandomBreakActivity(Phase) {
 
   var random = Math.floor(Math.random() * validActivities.length);
 
-  return validActivities[random].name;
+  return validActivities[random];
 }

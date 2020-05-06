@@ -38,8 +38,9 @@ class ExpirePage {
       this.properties["NextPhase"] == Phases.LONG_BREAK
     ) {
       this.properties["Activity"] = RandomBreakActivity(
-        properties["NextPhase"]
-      );
+        properties["NextPhase"],
+        activities
+      ).name;
       if (this.properties["Activity"] instanceof Error) {
         this.page.Close();
         alert(
